@@ -12,13 +12,40 @@ public class HellPet implements IFlying, IJumping {
     private HellPetColor color;
     private Torturer torturer;
 
-    private int flyingSpeed;
-    private int jumpingSpeed;
+    private Integer flyingSpeed;
+    private Integer jumpingSpeed;
 
-    public HellPet(String name, HellPetColor color, Torturer torturer, HellPetType hellPetType) {
-        setName(name);
-        setColor(color);
-        setTorturer(torturer);
+    public HellPet(String name, HellPetColor color, Torturer torturer, HellPetType type, Integer jumpingSpeed, Integer flyingSpeed) {
+        if (type != null) {
+            setName(name);
+            setColor(color);
+            setTorturer(torturer);
+            setFlyingSpeed(flyingSpeed);
+            setJumpingSpeed(jumpingSpeed);
+            setHellPetType(type);
+        } else {
+            throw new IllegalArgumentException("HellPet type is NULL");
+        }
+
+        if (HellPetType.FLYING.equals(type)) {
+            if (flyingSpeed == null) {
+                throw new IllegalArgumentException("flyingSpeed is mandatory for a FLYING HellPet");
+            }
+        } else if (HellPetType.JUMPING.equals(type)) {
+            if (jumpingSpeed == null) {
+                throw new IllegalArgumentException("jumpingSpeed is mandatory for a JUMPING HellPet");
+            }
+        }
+    }
+
+    public void becomeFlying(Integer flyingSpeed) {
+        setFlyingSpeed(flyingSpeed);
+        setHellPetType(HellPetType.FLYING);
+    }
+
+    public void becomeJumping(Integer jumpingSpeed) {
+        setJumpingSpeed(jumpingSpeed);
+        setHellPetType(HellPetType.JUMPING);
     }
 
     //region Getters and Setters
@@ -60,18 +87,29 @@ public class HellPet implements IFlying, IJumping {
             throw new IllegalArgumentException("torturer is NULL");
         }
     }
+
+    public HellPetType getHellPetType() {
+        return hellPetType;
+    }
+
+    public void setHellPetType(HellPetType hellPetType) {
+        if (hellPetType != null) {
+            this.hellPetType = hellPetType;
+        } else throw new IllegalArgumentException("hellPetType is NULL");
+    }
+
     //endregion
 
     //region Getter and Setter from Interface
     @Override
-    public void setFlyingSpeed(int flyingSpeed) {
-        if (flyingSpeed > 0) {
+    public void setFlyingSpeed(Integer flyingSpeed) {
+        if (flyingSpeed != null && flyingSpeed > 0) {
             this.flyingSpeed = flyingSpeed;
-        } else throw new IllegalArgumentException("flyingSpeed should be > 0");
+        } else throw new IllegalArgumentException("flyingSpeed should be > 0 and NOT NULL");
     }
 
     @Override
-    public int getFlyingSpeed() {
+    public Integer getFlyingSpeed() {
         return flyingSpeed;
     }
 
@@ -83,14 +121,14 @@ public class HellPet implements IFlying, IJumping {
     }
 
     @Override
-    public void setJumpingSpeed(int jumpingSpeed) {
-        if (jumpingSpeed > 0) {
+    public void setJumpingSpeed(Integer jumpingSpeed) {
+        if (jumpingSpeed != null && jumpingSpeed > 0) {
             this.jumpingSpeed = jumpingSpeed;
-        } else throw new IllegalArgumentException("jumpingSpeed should be > 0");
+        } else throw new IllegalArgumentException("jumpingSpeed should be > 0 and NOT NULL");
     }
 
     @Override
-    public int getJumpingSpeed() {
+    public Integer getJumpingSpeed() {
         return jumpingSpeed;
     }
 

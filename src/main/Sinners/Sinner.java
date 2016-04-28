@@ -19,10 +19,14 @@ public class Sinner implements ILiar, IMurderer {
     private int amountOfLies;
     private int amountOfVictims;
 
-    public Sinner(String firstName, String lastName, Date birthDate) {
-        setFirstName(firstName);
-        setLastName(lastName);
-        setBirthDate(birthDate);
+    public Sinner(String firstName, String lastName, Date birthDate, EnumSet<SinnerType> sinnerTypes) {
+        if (sinnerTypes != null) {
+            if (sinnerTypes.isEmpty()) {
+                setFirstName(firstName);
+                setLastName(lastName);
+                setBirthDate(birthDate);
+            } else throw new IllegalArgumentException("sinnerTypes is empty");
+        } else throw new IllegalArgumentException("sinnerTypes is NULL");
     }
 
 
