@@ -1,9 +1,14 @@
-package main;
+package main.PunishmentTools;
+
+import main.TortureDepartment;
 
 /**
  * Created by tieorange on 22/04/16.
  */
 public class PunishmentTool {
+    public Explosive explosive; // TODO:
+    public Beating beating; // TODO
+
     private String name;
     private int damage;
     private TortureDepartment tortureDepartment;
@@ -48,7 +53,10 @@ public class PunishmentTool {
         }
     }
 
-    private class ElementForce{
 
+    private class Explosive { // TODO
+    }
+
+    private class Beating { // TODO
     }
 }

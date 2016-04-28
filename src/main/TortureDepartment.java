@@ -1,5 +1,6 @@
 package main;
 
+import main.PunishmentTools.PunishmentTool;
 import main.Torturers.Torturer;
 
 import java.util.*;

@@ -1,11 +1,9 @@
 package UnitTests;
 
-import main.PunishmentTool;
+import main.PunishmentTools.PunishmentTool;
 import main.TortureDepartment;
-import org.junit.After;
 import org.junit.Test;
 
-import static com.sun.xml.internal.ws.dump.LoggingDumpTube.Position.After;
 import static org.junit.Assert.*;
 
 /**
