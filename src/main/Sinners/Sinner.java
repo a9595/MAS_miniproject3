@@ -19,9 +19,19 @@ public class Sinner implements ILiar, IMurderer {
     private int amountOfLies;
     private int amountOfVictims;
 
-    public Sinner(String firstName, String lastName, Date birthDate, EnumSet<SinnerType> sinnerTypes) {
+    public Sinner(String firstName, String lastName, Date birthDate, EnumSet<SinnerType> sinnerTypes, Integer amountOfLies, Integer amountOfVictims) {
         if (sinnerTypes != null) {
-            if (sinnerTypes.isEmpty()) {
+            if (!sinnerTypes.isEmpty()) {
+                if (sinnerTypes.contains(SinnerType.LIAR)) {
+                    if (amountOfLies != null) {
+                        setAmountOfLies(amountOfLies);
+                    } else throw new IllegalArgumentException("amountOfLies is mandatory for LIAR");
+                }
+                if (sinnerTypes.contains(SinnerType.MURDERER)) {
+                    if (amountOfVictims != null) {
+                        setAmountOfVictims(amountOfVictims);
+                    } else throw new IllegalArgumentException("amountOfVictims is mandatory for MURDERER");
+                }
                 setFirstName(firstName);
                 setLastName(lastName);
                 setBirthDate(birthDate);
@@ -118,7 +128,7 @@ public class Sinner implements ILiar, IMurderer {
 
     //region Getters and Setters and Methods from Interfaces
     @Override
-    public void setAmountOfLies(int amountOfLies) {
+    public void setAmountOfLies(Integer amountOfLies) {
         if (amountOfLies >= 0) {
             this.amountOfLies = amountOfLies;
         } else {
@@ -133,12 +143,11 @@ public class Sinner implements ILiar, IMurderer {
 
 
     @Override
-    public void setAmountOfVictims(int amountOfVictims) {
+    public void setAmountOfVictims(Integer amountOfVictims) {
         if (amountOfVictims >= 0) {
             this.amountOfVictims = amountOfVictims;
-        } else {
-            throw new IllegalArgumentException("amountOfVictims should be >= 0");
-        }
+        } else throw new IllegalArgumentException("amountOfVictims should be >= 0");
+
     }
 
     @Override
@@ -148,14 +157,14 @@ public class Sinner implements ILiar, IMurderer {
 
     @Override
     public void tryKill() {
-        if (sinnerTypes.contains(SinnerType.MURDURER)) {
+        if (sinnerTypes.contains(SinnerType.MURDERER)) {
             System.out.println("Sinner killed another Sinner"); // TODO: mock
         } else throw new RuntimeException("Sinner is not a Murderer");
     }
 
     @Override
     public void tryToLie() {
-        if (sinnerTypes.contains(SinnerType.LIER)) {
+        if (sinnerTypes.contains(SinnerType.LIAR)) {
             System.out.println("Sinner lied to another Sinner"); // TODO: mock
         } else throw new RuntimeException("Sinner is not a liar");
     }

@@ -47,4 +47,8 @@ public class PunishmentTool {
             this.tortureDepartment.addPunishmentTool(this);
         }
     }
+
+    private class ElementForce{
+
+    }
 }
