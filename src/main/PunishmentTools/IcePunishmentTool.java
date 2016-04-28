@@ -5,11 +5,12 @@ import main.TortureDepartment;
 /**
  * Created by tieorange on 28/04/16.
  */
-public class IcePunishmentTool extends PunishmentTool{
+public abstract class IcePunishmentTool extends PunishmentTool{
     private Double minTemperature;
 
-    public IcePunishmentTool(String name, int damage, TortureDepartment tortureDepartment) {
+    public IcePunishmentTool(String name, int damage, TortureDepartment tortureDepartment, Double minTemperature) {
         super(name, damage, tortureDepartment);
+        setMinTemperature(minTemperature);
     }
 
     public Double getMinTemperature() {

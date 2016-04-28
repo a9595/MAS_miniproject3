@@ -5,7 +5,7 @@ import main.TortureDepartment;
 /**
  * Created by tieorange on 28/04/16.
  */
-public class FlamePunishmentTool extends PunishmentTool {
+public abstract class FlamePunishmentTool extends PunishmentTool {
     private double maxTemperature;
 
     public FlamePunishmentTool(String name, int damage, TortureDepartment tortureDepartment, Double maxTemperature) {
