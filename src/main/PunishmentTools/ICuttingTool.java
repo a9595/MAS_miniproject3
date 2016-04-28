@@ -1,4 +1,4 @@
-package main.PunishmentTools.Attempt2;
+package main.PunishmentTools;
 
 /**
  * Created by tieorange on 28/04/16.

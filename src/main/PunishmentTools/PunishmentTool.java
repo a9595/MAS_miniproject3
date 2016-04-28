@@ -5,10 +5,7 @@ import main.TortureDepartment;
 /**
  * Created by tieorange on 22/04/16.
  */
-public class PunishmentTool {
-    public Explosive explosive; // TODO:
-    public Beating beating; // TODO
-
+public abstract class PunishmentTool {
     private String name;
     private int damage;
     private TortureDepartment tortureDepartment;
@@ -53,10 +50,4 @@ public class PunishmentTool {
         }
     }
 
-
-    private class Explosive { // TODO
-    }
-
-    private class Beating { // TODO
-    }
 }
