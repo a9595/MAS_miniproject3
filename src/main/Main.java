@@ -19,16 +19,21 @@ public class Main {
         Collection<Torturer> torturers = new ArrayList<>();
 //        torturers.add(new TorturerWithKnife())
 
+        // OVERLAPPING
         EnumSet<SinnerType> sinnerTypes = EnumSet.of(SinnerType.LIAR, SinnerType.MURDERER);
         Sinner sinner = new Sinner("bob", "marley", new Date(), sinnerTypes, 3, 3);
         sinner.Kill();
+        sinner.tryToLie();
 
 
         TortureDepartment tortureDepartment = new TortureDepartment("boiling room");
 
+        // DYNAMIC
         TorturerWithSpikes torturerWithSpikes = new TorturerWithSpikes("Mifelos", tortureDepartment);
         HellPet hellPet = new HellPet("bonia", HellPetColor.GREEN, torturerWithSpikes, HellPetType.FLYING, null, 100);
         hellPet.becomeJumping(1000);
+
+
     }
 
 }
