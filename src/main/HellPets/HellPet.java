@@ -20,9 +20,14 @@ public class HellPet implements IFlying, IJumping {
             setName(name);
             setColor(color);
             setTorturer(torturer);
-            setFlyingSpeed(flyingSpeed);
-            setJumpingSpeed(jumpingSpeed);
             setHellPetType(type);
+
+            if (HellPetType.FLYING.equals(type)) {
+                setFlyingSpeed(flyingSpeed);
+            } else if (HellPetType.JUMPING.equals(type)) {
+                setJumpingSpeed(jumpingSpeed);
+            }
+
         } else {
             throw new IllegalArgumentException("HellPet type is NULL");
         }

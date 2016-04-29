@@ -1,5 +1,6 @@
 package UnitTests;
 
+import main.PunishmentTools.ExplosivePunishmentTool;
 import main.PunishmentTools.PunishmentTool;
 import main.TortureDepartment;
 import org.junit.Test;
@@ -17,7 +18,7 @@ public class PunishmentToolTest {
 
     @org.junit.Before
     public void setUp() throws Exception {
-        punishmentTool = new PunishmentTool(Name, DAMAGE, TORTURE_DEPARTMENT);
+        punishmentTool = new ExplosivePunishmentTool("bomb", 40, TORTURE_DEPARTMENT, 4.6, -10);
     }
 
     @Test

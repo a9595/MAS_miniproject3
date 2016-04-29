@@ -22,6 +22,7 @@ public class Sinner implements ILiar, IMurderer {
     public Sinner(String firstName, String lastName, Date birthDate, EnumSet<SinnerType> sinnerTypes, Integer amountOfLies, Integer amountOfVictims) {
         if (sinnerTypes != null) {
             if (!sinnerTypes.isEmpty()) {
+                this.sinnerTypes = sinnerTypes;
                 if (sinnerTypes.contains(SinnerType.LIAR)) {
                     if (amountOfLies != null) {
                         setAmountOfLies(amountOfLies);
