@@ -1,4 +1,4 @@
-package main.PunishmentTools;
+package main.PunishmentTools.multiAspect.Attempt2;
 
 /**
  * Created by tieorange on 28/04/16.

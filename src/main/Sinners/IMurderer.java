@@ -8,6 +8,5 @@ public interface IMurderer {
 
     public int getAmountOfVictims();
 
-    // TODO: add Sinner as a parameter
-    public void tryKill();
+    public void Kill();
 }

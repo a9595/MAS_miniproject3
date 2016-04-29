@@ -1,5 +1,6 @@
-package main.PunishmentTools;
+package main.PunishmentTools.multiAspect.Attempt2;
 
+import main.PunishmentTools.PunishmentTool;
 import main.TortureDepartment;
 
 /**

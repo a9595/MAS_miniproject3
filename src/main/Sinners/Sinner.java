@@ -156,7 +156,7 @@ public class Sinner implements ILiar, IMurderer {
     }
 
     @Override
-    public void tryKill() {
+    public void Kill() {
         if (sinnerTypes.contains(SinnerType.MURDERER)) {
             System.out.println("Sinner killed another Sinner"); // TODO: mock
         } else throw new RuntimeException("Sinner is not a Murderer");

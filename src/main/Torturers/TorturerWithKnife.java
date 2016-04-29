@@ -6,7 +6,6 @@ import main.TortureDepartment;
  * Created by tieorange on 26/04/16.
  */
 public class TorturerWithKnife extends Torturer {
-    // TODO2: add knife
 
     public TorturerWithKnife(String name, TortureDepartment tortureDepartment) {
         super(name + " with knife", tortureDepartment);

@@ -1,30 +1,32 @@
-package main.PunishmentTools.Attempt2;
+package main.PunishmentTools.multiAspect.Attempt2;
 
-import main.PunishmentTools.IcePunishmentTool;
 import main.TortureDepartment;
 
 /**
  * Created by tieorange on 28/04/16.
  */
-public class IceExplosiveTool extends IcePunishmentTool implements  IExplosiveTool{
-    // TODO:
+public class IceExplosiveTool extends IcePunishmentTool implements IExplosiveTool {
+    private int explosivePower;
+
     public IceExplosiveTool(String name, int damage, TortureDepartment tortureDepartment, Double minTemperature) {
         super(name, damage, tortureDepartment, minTemperature);
-        // TODO:
+        setExplosivePower(explosivePower);
     }
 
     @Override
     public int getExplosivePower() {
-        return 0;// TODO:
+        return explosivePower;
     }
 
     @Override
     public void setExplosivePower(Integer explosivePower) {
-// TODO:
+        if (explosivePower != null) {
+            this.explosivePower = explosivePower;
+        } else throw new IllegalArgumentException("explosivePower is NULL");
     }
 
     @Override
     public void explode() {
-// TODO:
+        System.out.println("explode");
     }
 }
