@@ -8,6 +8,5 @@ public interface ILiar {
 
     public int getAmountOfLies();
 
-    // TODO: add Sinner as a param
     public void tryToLie();
 }

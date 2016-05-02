@@ -108,9 +108,11 @@ public class HellPet implements IFlying, IJumping {
     //region Getter and Setter from Interface
     @Override
     public void setFlyingSpeed(Integer flyingSpeed) {
-        if (flyingSpeed != null && flyingSpeed > 0) {
-            this.flyingSpeed = flyingSpeed;
-        } else throw new IllegalArgumentException("flyingSpeed should be > 0 and NOT NULL");
+        if (HellPetType.FLYING.equals(hellPetType)) {
+            if (flyingSpeed != null && flyingSpeed > 0) {
+                this.flyingSpeed = flyingSpeed;
+            } else throw new IllegalArgumentException("flyingSpeed should be > 0 and NOT NULL");
+        } else throw new IllegalArgumentException("HellPet is not a flying pet");
     }
 
     @Override
@@ -127,9 +129,11 @@ public class HellPet implements IFlying, IJumping {
 
     @Override
     public void setJumpingSpeed(Integer jumpingSpeed) {
-        if (jumpingSpeed != null && jumpingSpeed > 0) {
-            this.jumpingSpeed = jumpingSpeed;
-        } else throw new IllegalArgumentException("jumpingSpeed should be > 0 and NOT NULL");
+        if (HellPetType.JUMPING.equals(hellPetType)) {
+            if (jumpingSpeed != null && jumpingSpeed > 0) {
+                this.jumpingSpeed = jumpingSpeed;
+            } else throw new IllegalArgumentException("jumpingSpeed should be > 0 and NOT NULL");
+        } else throw new IllegalArgumentException("HellPet is not a jumping pet");
     }
 
     @Override

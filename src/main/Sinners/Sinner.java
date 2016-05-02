@@ -145,6 +145,7 @@ public class Sinner implements ILiar, IMurderer {
 
     @Override
     public void setAmountOfVictims(Integer amountOfVictims) {
+        // TODO: CHECK THE TYPE
         if (amountOfVictims >= 0) {
             this.amountOfVictims = amountOfVictims;
         } else throw new IllegalArgumentException("amountOfVictims should be >= 0");

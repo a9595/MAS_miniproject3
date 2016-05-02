@@ -3,6 +3,7 @@ package main;
 import main.HellPets.HellPet;
 import main.HellPets.HellPetColor;
 import main.HellPets.HellPetType;
+import main.PunishmentTools.ExplosivePunishmentTool;
 import main.Sinners.Sinner;
 import main.Sinners.SinnerType;
 import main.Torturers.Torturer;
@@ -32,7 +33,6 @@ public class Main {
         TorturerWithSpikes torturerWithSpikes = new TorturerWithSpikes("Mifelos", tortureDepartment);
         HellPet hellPet = new HellPet("bonia", HellPetColor.GREEN, torturerWithSpikes, HellPetType.FLYING, null, 100);
         hellPet.becomeJumping(1000);
-
 
     }
 

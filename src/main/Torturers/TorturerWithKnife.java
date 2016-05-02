@@ -13,6 +13,6 @@ public class TorturerWithKnife extends Torturer {
 
     @Override
     public void punish() {
-        System.out.println("Torturer punished with a knife"); // TODO mock
+        System.out.println("Torturer punished with a knife");
     }
 }
